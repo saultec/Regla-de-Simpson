@@ -1,0 +1,69 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Valor verdadero es:  98.4277\n",
+      "El resultado es de:  99.45683346221226\n",
+      "et (%)=  1.04557300659495\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "a=0\n",
+    "b=3\n",
+    "n=4\n",
+    "vv=98.4277\n",
+    "print(\"Valor verdadero es: \", vv)\n",
+    "\n",
+    "h=(b-a)/n\n",
+    "x0=0\n",
+    "x1=x0+h\n",
+    "x2=x1+h\n",
+    "x3=x2+h\n",
+    "x4=x3+h\n",
+    "\n",
+    "fx0=math.exp(x0)*(x0**2)\n",
+    "fx1=math.exp(x1)*(x1**2)\n",
+    "fx2=math.exp(x2)*(x2**2)\n",
+    "fx3=math.exp(x3)*(x3**2)\n",
+    "fx4=math.exp(x4)*(x4**2)\n",
+    "\n",
+    "I=(b-a)*((fx0+4*(fx1+fx3)+2*(fx2)+fx4))/12\n",
+    "et=abs((vv-I)/vv)*100\n",
+    "\n",
+    "print(\"El resultado es de: \", I)\n",
+    "print(\"et (%)= \", et)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
